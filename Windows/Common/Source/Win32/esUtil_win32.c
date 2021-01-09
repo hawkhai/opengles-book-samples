@@ -47,7 +47,8 @@ LRESULT WINAPI ESWindowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
             if ( esContext && esContext->drawFunc )
                esContext->drawFunc ( esContext );
             
-            ValidateRect( esContext->hWnd, NULL );
+			if (esContext && esContext->hWnd)
+	            ValidateRect( esContext->hWnd, NULL );
          }
          break;
 
